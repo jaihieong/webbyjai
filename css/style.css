@@ -1,3 +1,184 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Custom properties */
+:root {
+    --ff-primary: 'Nunito Sans', sans-serif;
+    --ff-secondary: 'Crimson Text', serif;
+    --ff-third: 'Padauk', sans-serif;
+
+    --fw-reg: 300;
+    --fw-bold: 900;
+
+    --clr-white: #fff;
+    --clr-black: #000000d2;
+    --clr-light-gray: #E7E6E1;
+    --clr-light: #F7F6E7;
+    --clr-dark: #314E52;
+    --clr-accent: #F2A154;
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25em 0.75em rgba(0,0,0,0.25),
+        0.125em 0.125em 0.25em rgba(0,0,0,0.15);
+    
+    
+}
+
+/* bigger text for bigger display */
+@media (min-width: 600px) {
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* general properties */
 body {
-    font-family: 'Nunito Sans', sans-serif;
+    background: var(--clr-white);
+    color: var(--clr-black);
+    margin: 0;
+    font-family: var(--ff-primary);
+    font-size: var(--fs-body);
+    line-height: 1.6;
+    min-width: 300px;
+}
+
+section{
+    padding: 5em 3em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+strong { font-weight: bold; }
+
+/* Typgography */
+h1,
+h2,
+h3 {
+    line-height: 1;
+    margin: 0;
+}
+
+h1 { font-size: var(--fs-h1) }
+h2 { font-size: var(--fs-h2) }
+h3 { font-size: var(--fs-h3) }
+
+.section__title {
+    margin-bottom: .25em;
+}
+
+.section__title--intro {
+    font-weight: var(--fw-reg);
+}
+
+/* Make Jai An to be always displayed on its own line */
+.section__title--intro strong {
+    display: block;
+}
+
+.section__subtitle {
+    margin: 0;
+    font-size: var(--fs-h3);
+
+}
+
+.section__subtitle--intro,
+.section__subtitle--about {
+    background: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--ff-third);
+    margin-bottom: 1em;
+}
+
+/* header */
+nav {
+    display: none;
+}
+
+.intro {
+    position: relative;
+}
+
+.intro__img {
+    box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto; /* content is centered */
+        grid-column-gap: 1em;
+        grid-template-areas:
+            "img title"
+            "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1/ 1;
+        grid-row: 2;
+        text-align: right;
+        position: relative;
+        left: -1.5em;
+        width: calc(100% + 1.5em);
+    }
+}
+
+.my-services {
+    background-color: var(--clr-black);
+    background-image: url(../img/bg-img-coding.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: var(--clr-white);
+    text-align: center;
+}
+
+.section__title--services {
+    color: var(--clr-accent);
+    position: relative;
+}
+
+/* horizontal line after section__title */
+.section__title--services::after {
+    content: '';
+    display: block;
+    width: 25%;
+    height: 1px;
+    margin: 0.5em auto 1em;
+    background: var(--clr-white);
+    opacity: 0.5;
+}
+
+@media (min-width: 800px) {
+    .services {
+        display: flex;
+        max-width: 1000px;
+        margin: 0 auto;
+        
+    }
+
+    .service + .service {
+        margin-left: 2em;
+    }
 }
