@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
         integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/8c23a27323.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -29,10 +30,10 @@
 
         </div>
 
+        <button class="nav-toggle" aria-label="toggle navigation">
+            <span class="hamburger"></span>
+        </button>
         <nav class="nav">
-            <button class="nav-toggle" aria-label="toggle navigation">
-                <span class="hamburger"></span>
-            </button>
             <ul class="nav__list">
                 <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
                 <li class="nav__item"><a href="#services" class="nav__link">My Services</a></li>
@@ -89,19 +90,19 @@
         <div class="about-me__body">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem facilis magnam asperiores quae cupiditate
                 quia quisquam? Earum ipsa et vero sit at est velit, voluptate blanditiis animi libero molestias harum
-                neque consequatur sapiente dolore commodi odit tenetur nesciunt alias, quia accusantium. Perspiciatis
-                illum sunt atque nemo ut praesentium natus enim?</p>
+                neque consequatur sapiente dolore commodi odit tenetur nesciunt alias.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non harum maxime tenetur explicabo perferendis
                 omnis assumenda delectus vitae hic animi, expedita quam possimus ut nesciunt adipisci dicta eius amet
                 ullam!</p>
         </div>
-        <img src="img/dev_jai_tall.JPG" alt="a professional picture of Jai with light smile" class="about-me__img">
+        <img src="img/jai_working.jpg" alt="a professional picture of Jai with light smile" class="about-me__img">
+
     </section>
 
 
     <section class="my-work" id="work">
-        <h2 class="section__title">My Work</h2>
-        <p class="section__subtitle"></p>
+        <h2 class="section__title section__title--work">My Work</h2>
+        <p class="section__subtitle section__subtitle--work">Selection of my range of work</p>
 
         <div class="portfolio">
             <a href="#" class="portfolio_item">
@@ -125,19 +126,30 @@
         </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <a href="mailto:webbyjai@gmail.com" class="footer__link">webbyjai@gmail.com</a>
         <ul class="social-list">
-            <li class="social-list__item"><a class="social-list__link" href="https://google.com"
-                    target="_blank">google</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="https://developer.mozilla.org/en-US/"
-                    target="_blank">MDN</a>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://github.com/jaihieong?tab=repositories" target="_blank">
+                    <i class="fab fa-github-square fa-lg"></i>
+                </a>
             </li>
-            <li class="social-list__item"><a class="social-list__link" href="https://www.npmjs.com/"
-                    target="_blank">NPM</a></li>
-            <li class="social-list__item"><a class="social-list__link" href="https://www.webbyjai.com/"
-                    target="_blank">webbyJai</a>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.linkedin.com/in/webbyjai/" target="_blank">
+                    <i class="fab fa-linkedin-in fa-lg"></i>
+                </a>
             </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.instagram.com/webbyjai/" target="_blank">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+            </li>
+            <li class="social-list__item">
+                <a class="social-list__link" href="https://www.webbyjai.com/" target="_blank">
+                    <i class="fas fa-home fa-lg"></i>
+                </a>
+            </li>
+
         </ul>
     </footer>
 

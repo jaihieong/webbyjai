@@ -17,7 +17,7 @@
     --clr-black: #000000d2;
     --clr-light-gray: #E7E6E1;
     --clr-light: #F7F6E7;
-    --clr-dark: #314E52;
+    --clr-dark: #242e30;
     --clr-accent: #F2A154;
 
     --fs-h1: 3rem;
@@ -128,10 +128,73 @@ h3 { font-size: var(--fs-h3) }
 }
 
 /* header */
-nav {
+/* nav {
     display: none;
+} */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
 }
 
+.logo {
+    max-width: 100px;
+}
+
+.nav {
+    position: fixed;
+    background: var(--clr-dark);
+    color: var(--clr-white);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+
+    transform: translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.nav__list {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav__link {
+    color: inherit;
+    font-weight: var(--fw-bold);
+    font-size: var(--fs-h3);
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    color: var(--clr-accent);
+    text-decoration: underline;
+}
+
+.hamburger {
+    background: var(--clr-dark);
+    width: 2em;
+    height: 3px;
+    border-radius: 1em;
+    display: block;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+}
+
+/* header */
 .intro {
     position: relative;
 }
@@ -225,23 +288,146 @@ nav {
 .about-me {
     max-width: 1000px;
     margin: 0 auto;
+    /* padding-bottom: 0; */
 }
 
-@media (min-width: 600px) {
+.about-me__img {
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: var(--bs);
+    position: relative;
+    object-fit: cover;
+    /* object-position: top; */
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+}
+
+@media (min-width: 800px) {
     .about-me {
         display: grid;
         grid-template-columns: 1fr 200px;
         grid-template-areas: 
             "title img"
             "subtitle img"
-            "text img"
+            "text img";
+        grid-column-gap: 2em;
+            
     }
 
     .section__title--about {
         grid-area: title;
     }
 
+    .section__subtitle--about {
+        grid-area: subtitle;
+    }
+
+    .section__subtitle--about {
+        grid-column: 1/ -1;
+        grid-row: 2;
+        position: relative;
+        left: -2em;
+        width: calc(100% + 4em);
+        padding-left: 2em;
+        padding-right: calc(200px + 4em);
+    }
+
     .about-me__img {
         grid-area: img;
+        position: relative;
+        z-index: 2;
+        margin-top: 15%;
+        width: 100%;
+        height: auto;
     }
+}
+
+.my-work {
+    background-color: var(--clr-dark);
+    color: var(--clr-white);
+}
+
+.section__subtitle--work {
+    color: var(--clr-accent);
+    font-weight: bold;
+    margin-bottom: center;
+}
+
+.portfolio {
+    display: grid;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* .portfolio_item:hover {
+    background-color: var(--clr-accent);
+} */
+
+.portfolio-img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    /* box-shadow: var(--bs); */
+    position: relative;
+    object-fit: cover;
+    /* object-position: top; */
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+
+    transition: 
+        transform 200ms cubic-bezier(.1, 0, .1, 1),
+        opacity 250ms linear;
+}
+
+
+
+.portfolio-img:hover {
+    transform: scale(1.2);
+    opacity: .5;
+}
+
+/* Footer */
+.footer {
+    background: #111;
+    color: var(--clr-accent);
+    text-align: center;
+    padding: 2.5em 0;
+}
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer__link {
+    font-size: var(--fs-h3);
+    font-weight: var(--fw-bold);
+}
+
+.footer__link:hover,
+.social-list__link:hover {
+    opacity: .6;
+}
+
+.footer__link:hover {
+    text-decoration: underline;
+}
+
+.social-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    padding: 0;
+}
+
+.social-list__item {
+    margin: 0 .5em;
+}
+
+.social-list__link {
+    padding: .5em;
 }
